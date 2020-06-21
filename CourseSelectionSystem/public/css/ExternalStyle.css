@@ -1,0 +1,100 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+
+body{
+    background: #fffda3;
+    padding-top: 44px;
+    padding-bottom: 49px;
+}
+
+
+.DS_header{
+    background: #ffac07;
+    Line-height:44px;
+    font-size: 18px;
+    text-align:center;
+    color: white;
+    /*定位*/
+    left: 0;
+    top: 0;
+    width: 100%;
+    position: fixed;
+    z-index: 999;
+
+}
+
+.DS_second_section img{
+    width: 100%;
+}
+
+footer{
+    background: #ffac07;
+    display: table;
+    width: 100%;
+    height: 49px;
+    left: 0;
+    bottom: 0;
+    position: fixed;
+}
+
+footer a{
+    display: table-cell;
+    width: 20%;
+    text-decoration: none;
+    text-align: center;
+    vertical-align: middle;
+}
+footer a img{
+    width: 18px;
+}
+footer a span{
+    color: white;
+    display: block;
+    font-size: 12px;
+}
+.EP_first_section{
+    background: rgb(244,244,246);
+    display: table;
+    width: 100%;
+    height: 44px;
+    left: 0;
+    top: 44px;
+    position: fixed;
+}
+.EP_first_section a {
+    display: table-cell;
+    width: 33.3%;
+    text-decoration: none;
+    text-align: center;
+    vertical-align: middle;
+}
+.EP_first_section a span{
+    color: black;
+}
+.EP_img{
+    width: 100%;
+}
+.EP_external_div{
+    background: white;
+    text-align: center;
+}
+.EP_span{
+    font-size: 14px;
+}
+.EP_external_div p{
+    font-size: 10px;
+    color: gray;
+}
+.EP_external_div_sec{
+    text-align: center;
+}
+.EP_inner_div{
+    text-align: left;
+    padding-left: 20px;
+    font-size: 10px;
+    color: gray;
+    line-height: 2em;
+}

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login</title>
+    <meta charset="UTF-8" name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+    <link href="css/style.css" rel='stylesheet' type='text/css' />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+</head>
+<body>
+<!-----start-main---->
+<div class="main">
+    <div class="login-form">
+        <h1>注册账号</h1>
+        <div class="head">
+            <img src="images/user.png" alt=""/>
+        </div>
+        <form>
+            <input id="username" type="text" class="text" value="用户名" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = '用户名';}" >
+            <input id="password" type="password" value="Password" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Password';}">
+            <div class="submit">
+                <input id="register" type="button" value="注册">
+            </div>
+            <script src="http://libs.baidu.com/jquery/1.11.1/jquery.min.js"></script>
+            <script>
+                $("#register").click(function () {
+                    $.ajax({
+                        type:"post",
+                        url:"/register",
+                        data:{"name":$("#username").val(),"password":$("#password").val()},
+                        dataType:"json",
+                        async:true,
+                        success:function (data) {
+                            if(data.code==200){
+                                alert(data.msg)
+                                location.href = "/enter"
+                            }
+                            else {
+                                alert(data.msg)
+                                location.href = "/register"
+                            }
+                        }
+                    })
+                })
+
+            </script>
+
+        </form>
+    </div>
+    <!--//End-login-form-->
+
+</div>
+<!-----//end-main---->
+<!--<div style="display:none"><script src='http://v7.cnzz.com/stat.php?id=155540&web_id=155540' language='JavaScript' charset='gb2312'></script></div>-->
+
+
+
+</body>
+</html>

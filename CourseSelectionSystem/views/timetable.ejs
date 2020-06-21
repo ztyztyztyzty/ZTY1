@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<!--ctrl+/HTML注释-->
+<!--标签：双标签/单标签-->
+<!--行内标签/块级标签-->
+<html lang="en">
+<head>
+    <meta charset="UTF-8" name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+    <title>袁洋</title>
+    <!--<link>加载外部资源-->
+    <link rel="short icon" href="Resource/icon.png">
+    <!--stylesheet加载外部样式表-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+    <!-- JS, Popper.js, and jQuery -->
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+    <!--stylesheet加载外部样式表-->
+    <link href="css/ExternalStyle.css" rel='stylesheet' type='text/css' />
+    <style>
+        ul{
+            display: table;
+            width:100%;
+            background: white;
+            height:100px;
+            margin-bottom:10px;
+
+        }
+        /*成列标签 display:table-cell; width;需求值*/
+        li{
+            display:table-cell;
+            width:16.6%;
+            text-align:center;
+            vertical-align: middle;
+            border: 1px solid gray;
+        }
+        .first_ul{
+            margin-top: -6px;
+        }
+        /*span{*/
+        /*border: 1px solid #ff0;*/
+        /*}*/
+
+    </style>
+
+<body>
+<header class="DS_header">
+    <!--第一部分-->
+    <span>选课系统</span>
+</header>
+<div class="table-responsive-sm">
+<table class="table table-bordered" width="600">
+    <tr>
+        <th width="100"><span></span></th>
+
+        <th width="100"><span>周一</span></th>
+
+        <th width="100"><span>周二</span></th>
+
+        <th width="100"><span>周三</span></th>
+
+        <th width="100"><span>周四</span></th>
+
+        <th width="100"> <span>周五</span></th>
+    </tr>
+
+
+    <tr>
+        <th><span>1-2节</span></th>
+    <%  var i=11;for( i=11; i<=15; i++){ %>
+    <td>
+    <span style="font-size: 14px"><%= lessons[i].coursename %></span><br>
+    <span style="font-size: 14px"><%= lessons[i].teacher %></span><br>
+    <span style="font-size: 14px"><%= lessons[i].place %></span>
+    <% } %>
+    </td>
+    </tr>
+
+
+    <tr>
+    <th><span>3-4节</span></th>
+    <%  var i=21;for( i=21; i<=25; i++){ %>
+    <td>
+        <span style="font-size: 14px"><%= lessons[i].coursename %></span><br>
+        <span style="font-size: 14px"><%= lessons[i].teacher %></span><br>
+        <span style="font-size: 14px"><%= lessons[i].place %></span>
+    <% } %>
+    </td>
+    </tr>
+
+
+    <tr>
+        <th><span>5-6节</span></th>
+    <%  var i=31;for( i=31; i<=35; i++){ %>
+    <td>
+        <span style="font-size: 14px"><%= lessons[i].coursename %></span><br>
+        <span style="font-size: 14px"><%= lessons[i].teacher %></span><br>
+        <span style="font-size: 14px"><%= lessons[i].place %></span>
+    <% } %>
+    </td>
+    </tr>
+
+
+    <tr>
+        <th><span>7-8节</span></th>
+    <%  var i=41;for( i=41; i<=45; i++){ %>
+    <td>
+        <span style="font-size: 14px"><%= lessons[i].coursename %></span><br>
+        <span style="font-size: 14px"><%= lessons[i].teacher %></span><br>
+        <span style="font-size: 14px"><%= lessons[i].place %></span>
+    <% } %>
+    </td>
+    </tr>
+
+
+</table>
+</div>
+
+
+<footer>
+    <!--第四部分-->
+    <a href="/main">
+        <img src="images/nav10.png" alt="">
+        <span>选课</span>
+    </a>
+    <a href="/timetable">
+        <img src="images/nav21.png" alt="">
+        <span style="color: #1296db">课程表</span>
+    </a>
+    <a href="/chosen">
+        <img src="images/nav30.png" alt="">
+        <span>已选课程</span>
+    </a>
+    <a href="/myself">
+        <img src="images/nav40.png" alt="">
+        <span>我的资料</span>
+    </a>
+
+</footer>
+</body>
+</html>

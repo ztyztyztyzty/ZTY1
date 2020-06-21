@@ -1,0 +1,106 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>产品列表</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link href="style/adminStyle.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+ <div class="wrap">
+  <div class="page-title">
+    <span class="modular fl"><i></i><em>课程列表</em></span>
+  </div>
+  <div class="operate">
+   <!--<form>-->
+    <input type="text" class="textBox length-long" id="SearchText" placeholder="输入课程名称..."/>
+    <input type="button" id="SearchButton" value="查询" class="tdBtn"/>
+   <!--</form>-->
+  </div>
+  <table class="list-style Interlaced">
+   <tr>
+    <th>课程名称</th>
+    <th>教师</th>
+    <th>上课地点</th>
+    <th>上课时间</th>
+    <th>学分</th>
+    <th>操作</th>
+   </tr>
+      <%  var i=0;for( i=0; i<arr.length; i++){ %>
+   <tr>
+    <td>
+     <span id="span1">
+      <%= arr[i].name %>
+     </span>
+    </td>
+    <td class="td-name">
+      <span class="ellipsis td-name block"> <%= arr[i].teacher %></span>
+    </td>
+    <td class="center">
+     <span>
+      <%= arr[i].place %>
+     </span>
+    </td>
+    <td class="center">
+     <span>
+      <%= arr[i].time %>
+     </span>
+    </td>
+    <td class="center">
+    <span>
+        <%= arr[i].credit %>
+    </span>
+    </td>
+    <td class="center">
+     <button title="选课" id="edit" onclick="$.post('/getname',function(studentname){$.post('/edit',{
+             'name':studentname.name,
+             'coursename':'<%= arr[i].name %>',
+             'teacher':'<%= arr[i].teacher %>',
+             'place':'<%= arr[i].place %>',
+             'time':'<%= arr[i].time %>',
+             'credit':'<%= arr[i].credit %>',
+             'location':'<%= arr[i].location %>'
+                 },function(info){
+              if(info==1) alert('选课成功');
+              else alert('重复选课');
+             })
+             })"><img src="images/icon_edit.gif"/></button>
+     <button title="退选" id="drop"onclick="$.post('/getname',function(studentname){$.post('/delete',{
+             'name':studentname.name,
+             'coursename':'<%= arr[i].name %>',
+             'teacher':'<%= arr[i].teacher %>',
+             'place':'<%= arr[i].place %>',
+             'time':'<%= arr[i].time %>',
+             'credit':'<%= arr[i].credit %>'
+             },function(info){
+             if(info==-1) alert('未选此课');
+             else alert('退课成功');
+             })
+             })"><img src="images/icon_drop.gif"/></button>
+    </td>
+   </tr>
+      <% } %>
+  </table>
+  <!-- BatchOperation -->
+	  <!-- turn page -->
+	  <div class="turnPage center fr">
+	   <a>第一页</a>
+	   <a>1</a>
+	   <a>最后一页</a>
+	  </div>
+  </div>
+ </div>
+</body>
+<script src="http://libs.baidu.com/jquery/1.11.1/jquery.min.js"></script>
+<script>
+    $("#SearchButton").click(function () {
+        $.post("/SearchClasses", {
+            "name": $("#SearchText").val()
+        }, function(data){
+            location.href="SearchResult"
+        })
+    })
+     function edit(i){
+
+    }
+</script>
+</html>
